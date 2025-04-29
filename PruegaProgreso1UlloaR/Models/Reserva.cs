@@ -13,6 +13,10 @@ namespace PruegaProgreso1UlloaR.Models
 
         [ForeignKey ("ClienteIdentificacion")]
         public Cliente? Cliente { get; set; }
+        
+            public string NombreCliente => Cliente?.RobertoUlloa;//Muestra el nombre del cliente que hizo la reserva
 
     }
 }
+
+

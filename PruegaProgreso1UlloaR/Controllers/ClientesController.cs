@@ -53,7 +53,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Identificacion,Edad,NombreApellido,FechaEntrada,FechaSalida")] Cliente cliente)
+        public async Task<IActionResult> Create([Bind("Identificacion,Edad,RobertoUlloa,FechaEntrada,FechaSalida,EstadoActivo")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Identificacion,Edad,NombreApellido,FechaEntrada,FechaSalida")] Cliente cliente)
+        public async Task<IActionResult> Edit(string id, [Bind("Identificacion,Edad,RobertoUlloa,FechaEntrada,FechaSalida,EstadoActivo")] Cliente cliente)
         {
             if (id != cliente.Identificacion)
             {

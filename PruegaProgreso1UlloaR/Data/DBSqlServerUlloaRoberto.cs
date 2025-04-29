@@ -15,4 +15,6 @@ using PruegaProgreso1UlloaR.Models;
         public DbSet<PruegaProgreso1UlloaR.Models.Cliente> Cliente { get; set; } = default!;
 
 public DbSet<PruegaProgreso1UlloaR.Models.Reserva> Reserva { get; set; } = default!;
+
+public DbSet<PruegaProgreso1UlloaR.Models.Recompensa> Recompensa { get; set; } = default!;
     }
