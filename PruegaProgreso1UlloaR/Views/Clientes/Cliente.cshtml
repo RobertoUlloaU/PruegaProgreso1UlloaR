@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PruegaProgreso1UlloaR.Models.Cliente>
+
+<p>
+    <a asp-action="Create">Nuevo Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RobertoUlloa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaEntrada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaSalida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoActivo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Edad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RobertoUlloa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaEntrada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaSalida)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoActivo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Identificacion">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Identificacion">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Identificacion">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
