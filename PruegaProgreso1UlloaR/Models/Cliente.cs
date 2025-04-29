@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace PruegaProgreso1UlloaR.Models
 {
@@ -7,7 +6,7 @@ namespace PruegaProgreso1UlloaR.Models
     {
         [Key]
         [MaxLength(10)]
-        public int Identificacion { get; set; }
+        public string Identificacion { get; set; }
         
         public int Edad { get; set; }
 
