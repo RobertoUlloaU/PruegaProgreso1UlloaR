@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<DBSqlServerUlloaRoberto>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DBSqlServerUlloaRoberto") ?? throw new InvalidOperationException("Connection string 'DBSqlServerUlloaRoberto' not found.")));
 builder.Services.AddDbContext<DbSqlServerUlloaR>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbSqlServerUlloaR") ?? throw new InvalidOperationException("Connection string 'DbSqlServerUlloaR' not found.")));
 

@@ -11,9 +11,9 @@ namespace PruegaProgreso1UlloaR.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly DbSqlServerUlloaR _context;
+        private readonly DBSqlServerUlloaRoberto _context;
 
-        public ClientesController(DbSqlServerUlloaR context)
+        public ClientesController(DBSqlServerUlloaRoberto context)
         {
             _context = context;
         }
@@ -25,7 +25,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         }
 
         // GET: Clientes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -65,7 +65,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         }
 
         // GET: Clientes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -85,7 +85,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Identificacion,Edad,NombreApellido,FechaEntrada,FechaSalida")] Cliente cliente)
+        public async Task<IActionResult> Edit(string id, [Bind("Identificacion,Edad,NombreApellido,FechaEntrada,FechaSalida")] Cliente cliente)
         {
             if (id != cliente.Identificacion)
             {
@@ -116,7 +116,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         }
 
         // GET: Clientes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
@@ -136,7 +136,7 @@ namespace PruegaProgreso1UlloaR.Controllers
         // POST: Clientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var cliente = await _context.Cliente.FindAsync(id);
             if (cliente != null)
@@ -148,7 +148,7 @@ namespace PruegaProgreso1UlloaR.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClienteExists(int id)
+        private bool ClienteExists(string id)
         {
             return _context.Cliente.Any(e => e.Identificacion == id);
         }

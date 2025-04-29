@@ -5,7 +5,7 @@ namespace PruegaProgreso1UlloaR.Models
     public class Cliente
     {
         [Key]
-        [MaxLength(10)]
+        [MaxLength(100)]
         public string Identificacion { get; set; }
         
         public int Edad { get; set; }
